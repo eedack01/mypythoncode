@@ -5,9 +5,12 @@ def solution(A, K):
         A = [A.pop(len(A)-1)] +A[:len(A)]
     return A
 
-def solution2(A,K):
-    K = K%len(A) 
-    return A[-K:]+A[:-K]
+def solution(A, K):
+    if len(A) == 0: #in the instance of an empty list 
+        return A
+    else:
+        K = K % len(A)
+        return A[-K:] + A[:-K]
 
 solution([3, 8, 9, 7, 6], 3)
 solution2([3, 8, 9, 7, 6], 3)
